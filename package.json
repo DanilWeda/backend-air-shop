@@ -1,0 +1,24 @@
+{
+	"name": "fly-shop",
+	"version": "1.0.0",
+	"description": "my fly shop",
+	"main": "index.js",
+	"scripts": {
+		"server": "nodemon server.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"concurrently": "^7.2.1",
+		"dotenv": "^16.0.1",
+		"express": "^4.18.1",
+		"mongoose": "^6.3.6",
+		"multer": "^1.4.5-lts.1",
+		"path": "^0.12.7"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	}
+}
