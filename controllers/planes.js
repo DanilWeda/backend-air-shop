@@ -53,7 +53,7 @@ const createPlane = async (req, res) => {
 			price,
 			description,
 			capacity,
-			planeImage: `http://localhost:${process.env.PORT}/static/${req.file.filename}`
+			planeImage: `https://fly-shop-by.herokuapp.com/static/${req.file.filename}`
 		})
 
 		res.status(201).json(plane);
