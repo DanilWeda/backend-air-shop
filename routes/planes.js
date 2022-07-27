@@ -1,13 +1,21 @@
 const express = require('express');
+const fs = require('fs')
 const router = express.Router();
 const path = require('path');
 const { getPlanes, createPlane, getPlane } = require('../controllers/planes')
 const multer = require('multer');
 
 //Showing where we saving images
+
+
 const storage = multer.diskStorage({
-	destination: './assets/',
-	filename: (req, file, cb) => {
+	destination: (_, __, cb) => {
+		if (!fs.existsSync('assets')) {
+			fs.mkdirSync('assets')
+		}
+		cb(null, 'assets')
+	},
+	filename: (_, file, cb) => {
 		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
 	}
 })
