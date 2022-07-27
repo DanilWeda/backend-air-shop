@@ -16,6 +16,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors());
+app.use('/assets', express.static('assets'));
 
 //for passing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
